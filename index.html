@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Haneen Alrubaie | Computer Science</title>
+<meta name="description" content="Haneen Alrubaie — Software Developer & Full-Stack Developer. Explore an interactive universe of projects, skills, and experience." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%2303050a%22/><circle cx=%2250%22 cy=%2250%22 r=%2222%22 fill=%22%234ea1ff%22/></svg>" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="css/style.css" />
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+
+<canvas id="universe-canvas"></canvas>
+<div id="cursor"></div>
+
+<!-- ===================== INTRO ===================== -->
+<div id="intro">
+  <div class="intro-stars"></div>
+  <div class="intro-content">
+    <h1 id="intro-title" class="intro-title"></h1>
+    <p id="intro-subtitle" class="intro-subtitle"></p>
+  </div>
+</div>
+
+<!-- ===================== HUD ===================== -->
+<div id="hud">
+  <div class="hud-top">
+    <button id="home-btn" class="hud-brand" data-cursor-hover>
+      <img src="assets/images/logo.png" alt="Haneen Alrubaie logo" class="hud-logo" />
+      <span>Haneen Alrubaie</span>
+    </button>
+    <div class="hud-center">
+      <span class="hud-label">DESTINATION</span>
+      <span id="hud-destination" class="hud-destination">Overview</span>
+    </div>
+    <nav id="hud-nav" class="hud-nav"></nav>
+  </div>
+</div>
+
+<!-- ===================== PANELS ===================== -->
+<div id="panels">
+
+  <section id="panel-about" class="panel">
+    <div class="panel-inner">
+       <p class="panel-eyebrow">Destination 01</p>
+      <h2 class="panel-title">About Me</h2>
+      <div id="about-content"></div>
+    </div>
+  </section>
+
+  <section id="panel-projects" class="panel">
+    <div class="panel-inner panel-wide">
+       <p class="panel-eyebrow">Destination 02</p>
+      <h2 class="panel-title">Projects  </h2>
+      <p class="panel-lead">Every project here reflects a real, completed contribution.</p>
+       <div id="projects-orbit" class="orbit-field"></div>
+      <div id="project-detail" class="detail-overlay"></div>
+    </div>
+  </section>
+
+  <section id="panel-skills" class="panel">
+    <div class="panel-inner panel-wide">
+       <p class="panel-eyebrow">Destination 03</p>
+      <h2 class="panel-title">Technical Skills</h2>
+      <p class="panel-lead">Organized by area of work.</p>
+      <div id="skills-constellation" class="skills-grid"></div>
+  
+    </div>
+  </section>
+
+  <section id="panel-experience" class="panel">
+    <div class="panel-inner">
+       <p class="panel-eyebrow">Destination 04</p>
+      <h2 class="panel-title">Development Experience</h2>
+      <p class="panel-lead">What I build, laid out along the mission timeline.</p>
+      <div id="experience-timeline" class="timeline"></div>
+    </div>
+  </section>
+
+  <section id="panel-contact" class="panel">
+    <div class="panel-inner">
+       <p class="panel-eyebrow">Destination 04</p>
+      <h2 class="panel-title">Let's Connect  </h2>
+      <p class="panel-lead">Have a project, opportunity, or idea? Open a channel.</p>
+      <div class="contact-grid">
+        <div id="contact-methods" class="channel-list"></div>
+        <form id="transmission-form" class="transmission-form" novalidate>
+          <label>Name<input type="text" name="name" /><span class="field-error" data-error-for="name"></span></label>
+          <label>Email<input type="email" name="email" /><span class="field-error" data-error-for="email"></span></label>
+          <label>Subject<input type="text" name="subject" /><span class="field-error" data-error-for="subject"></span></label>
+          <label>Message<textarea name="message" rows="4"></textarea><span class="field-error" data-error-for="message"></span></label>
+<button type="submit" class="btn btn-primary btn-square" data-cursor-hover>Send Message</button>          <p id="transmission-status" class="transmission-status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- Content/config -->
+<script src="js/data.js"></script>
+<!-- Icons -->
+<script src="https://unpkg.com/lucide@1.39.0/dist/umd/lucide.js"></script>
+<!-- Animation engine -->
+<script src="https://unpkg.com/gsap@3.15.0/dist/gsap.min.js"></script>
+<!-- 3D universe (ES module) -->
+<script type="module" src="js/universe/main.js"></script>
+<!-- HUD / content / interactions -->
+<script src="js/hud.js"></script>
+</body>
+</html>
